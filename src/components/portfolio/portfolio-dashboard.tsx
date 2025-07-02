@@ -52,7 +52,7 @@ export function PortfolioDashboard() {
 
       setPortfolio(prev => ({
         ...prev,
-        balance: mockData.balance / 1_000_000, // Convert lamports to SOL
+        balance: mockData.balance / 1_000_000_000, // Convert lamports to SOL (9 decimals)
         tokens: mockData.tokens.map(token => ({
           ...token,
           amount: (parseFloat(token.amount) / Math.pow(10, token.decimals)).toFixed(2),

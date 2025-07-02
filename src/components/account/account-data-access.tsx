@@ -109,12 +109,9 @@ export function useTransferSolMutation({ address }: { address: Address }) {
           client,
         })
 
-        console.log(signature)
         return signature
       } catch (error: unknown) {
-        console.log('error', `Transaction failed! ${error}`)
-
-        return
+        throw new Error(`Transaction failed! ${error}`)
       }
     },
     onSuccess: async (tx) => {
